@@ -1,8 +1,9 @@
 <section class="cart-show">
 
-  <header class="page-header">
-    <h1>My Cart</h1>
-  </header>
+<% if enhanced_cart.length >= 1%>
+<header class="page-header">
+<h1>My Cart</h1>
+</header>
 
   <div class="panel panel-default items">
     <table class="table table-bordered">
@@ -48,5 +49,13 @@
       <% end %>
     </div>
   </div>
+  <% else %>
+  <div style="text-align: center;">
+  <header class="page-header">
+  <h1>Your Jungle Cart is empty!</h1>
+  <a href="/" class="nav-link px-2 text-muted">Find a plant friend</a>
+  </header>
+  </div>
+  <% end %>
 
 </section>
