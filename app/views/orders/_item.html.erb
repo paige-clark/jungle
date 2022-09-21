@@ -1,11 +1,11 @@
 <tr>
   <td>
-    IMAGE
+  <%= image_tag product.image.tiny.url %>
   </td>
   <td>
-    <h4>NAME</h4>
+  <h4><%= product.name %></h4>
     <br>
-    <p>DESC</p>
+    <p><%= product.description %></p>
   </td>
   <td class="text-center">
   <%= quantity %>

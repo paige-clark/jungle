@@ -1,4 +1,4 @@
-<%pp @order %>
+
 <section class="orders-show">
 <header class="page-header">
 <h1>Order #<%= @order.id %></h1>
@@ -7,8 +7,6 @@
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
   </div>
-
-  <%pp @enhanced_checkout %>
 
   <div class="panel panel-default items">
     <table class="table table-bordered">
@@ -20,8 +18,9 @@
         </tr>
       </thead>
       <tbody>
-        <% @enhanced_checkout.each do |item| %>
-          <%= render 'item', quantity: item[:quantity].to_i, total_price: item[:total_price_cents] %>
+        <% @combo_arr.each do |line, product| %>
+          <%= render 'item', quantity: line[:quantity].to_i, total_price: line[:total_price_cents], product: product[0] %>
+          <% pp product[0].name %>
         <% end %>
       </tbody>
       <tfoot>
