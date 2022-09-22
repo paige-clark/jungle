@@ -1,4 +1,30 @@
-<h1>Admin Dashboard</h1>
-<p>Types of plants for sale: <%= @db_count_products %> </p>
-<p>Number of catagories: <%= @db_count_catagories %> </p>
-<%= link_to 'All Products', [:admin, :products], class: 'btn btn-info' %>
+<section class="admin-products-index">
+
+  <header class="page-header">
+    <h1>Admin &raquo; Dashboard</h1>
+  </header>
+  <div class="text-center d-flex flex-column align-items-center">
+
+  <table class="table w-50 p-3">
+    <thead>
+      <tr>
+        <th scope="col">Stat</th>
+        <th scope="col">#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Types of plants for sale</td>
+        <td><%= @db_count_products %></td>
+      </tr>
+      <tr>
+        <td>Number of catagories</td>
+        <td><%= @db_count_catagories %></td>
+      </tr>
+    </tbody>
+    </table>
+    <br>
+  <%= link_to 'View All Products', [:admin, :products], class: 'btn btn-info' %>
+  </div>
+
+</section>
