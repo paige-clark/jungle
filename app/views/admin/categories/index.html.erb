@@ -1,16 +1,15 @@
 <section class="admin-products-index">
 
   <header class="page-header">
-  <h1>Admin &raquo; All Categories</h1>
+    <h1>Admin &raquo; All Categories</h1>
+    <%= link_to 'Dashboard', admin_root_path, class: "nav-link px-2 text-muted" %>
   </header>
 
-  <% pp @categories %>
-
+  <div class="h-100 d-flex align-items-center justify-content-center"> 
+  <div class="panel panel-default products table w-75 p-3">
   <div class="well">
     <%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
   </div>
-
-  <div class="panel panel-default products">
 
     <table class="table table-bordered">
       <thead>
@@ -23,6 +22,7 @@
       </tbody>
     </table>
 
+  </div>
   </div>
 
 
