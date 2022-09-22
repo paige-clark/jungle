@@ -2,26 +2,9 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    # p @order.line_items
-    # @line_items_array = @order.line_items
-    # Item
-
-
     @line_items_array = @order.line_items
     @line_product = @line_items_array.map {|product| Product.where(id: product.product_id) }
     @combo_arr = @line_items_array.zip @line_product
-    # pp @combo_arr
-    # @enhanced_checkout = LineItem.where( order_id: params[:id]).map {|product| Product.where(id: product.product_id) }
-    
-
-
-    
-
-    # @enhanced_checkout = LineItem.where( order_id: params[:id]).map {|product| Product.where(id: product.product_id) }
-    # @enhanced_checkout_products = @enhanced_checkout.map {|product| { product:product, quantity: cart[product.id.to_s] } }
-    # @enhanced_cart ||= LineItem.where(id: LineItem.order_id = ).map {|product| { product:product, quantity: cart[product.id.to_s] } }
-
-    # @enhanced_cart ||= Product.where(id: cart.keys).map {|product| { product:product, quantity: cart[product.id.to_s] } }
   end
 
   def create
