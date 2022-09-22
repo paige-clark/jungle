@@ -66,10 +66,10 @@
           My Cart (<%= cart.size %>) <% end %>
         </li>
         <% if current_user %>
-  Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %>
-<% else %>
-  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-<% end %>
+          <span class="nav-link disabled">Hello <%= current_user.first_name %>!</span> <%= link_to "Logout", '/logout', class: "nav-link" %>
+        <% else %>
+          <%= link_to 'Login', '/login', class: "nav-link" %> <%= link_to 'Register', '/signup', class: "nav-link" %>
+        <% end %>
       </ul>
     </div>
   </div>
