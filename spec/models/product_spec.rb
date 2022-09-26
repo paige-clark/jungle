@@ -13,7 +13,6 @@ RSpec.describe Product, type: :model do
                              price: 400,
                              quantity: 40)
       @product.save!
-      pp @product.id
       expect(@product.id).to be_present
     end
     ###########################################
