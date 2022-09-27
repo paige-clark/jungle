@@ -61,4 +61,38 @@ RSpec.describe User, type: :model do
       expect(@user2.errors.full_messages).to include("Email has already been taken")
     end
   end
+
+  describe '.authenticate_with_credentials' do
+    before(:each) do
+      User.create(first_name: "popopopo",
+                  last_name: "Gibson",
+                  password: "w222",
+                  email: "bobby@hoho.com",
+                  password_confirmation: "w222")
+    end
+
+    it "user should validate" do
+      user = User.find_by_email('bobby@hoho.com')
+      @authenticate = user.authenticate_with_credentials('bobby@hoho.com', "w222")
+      expect(@authenticate).to eq(user)
+    end
+
+    it "user with incorrect password should return nil" do
+      user = User.find_by_email('bobby@hoho.com')
+      @authenticate = user.authenticate_with_credentials('bobby@hoho.com', "w224")
+      expect(@authenticate).to be_nil
+    end
+
+    it "an email with leading and trailing whitespace should still validate" do
+      user = User.find_by_email('bobby@hoho.com')
+      @authenticate = user.authenticate_with_credentials('  bobby@hoho.com   ', "w222")
+      expect(@authenticate).to eq(user)
+    end
+
+    it "an email that's uppercase should still validate" do
+      user = User.find_by_email('bobby@hoho.com')
+      @authenticate = user.authenticate_with_credentials('BOBBY@hOhO.com', "w222")
+      expect(@authenticate).to eq(user)
+    end
+  end
 end
