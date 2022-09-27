@@ -12,7 +12,7 @@ describe('User can navigate from home to a product', () => {
     cy.get('.products article').should('have.length', 2);
   });
   // first check to see if there are two products on the page
-  it('Get the button for the first element', () => {
+  it('should increment the cart by one when you click add on a product', () => {
     cy.get('.products article:first button')
       .should('contain.text', 'Add')
       .click({ force: true });
