@@ -3,11 +3,16 @@
 A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example. The goal of this project was to simulate what it's like to work on code that has been developed by other people in a language that you aren't familiar with. In this case, I started learning Ruby and Ruby on Rails a week before the project began then had to implement assigned tasks.
 
 ## Screenshots
-SOLD OUT BUTTON FEATURE
-ADMIN PAGE
-CREATE A NEW PRODUCT WITH NEW CATEGORY
-REGISTER A USER
-ORDER INFO PAGE
+Feature request- show disabled add button and sold out badge if the stock is 0:
+![sold out badge](https://github.com/paige-clark/jungle/blob/master/docs/1.png?raw=true)
+Feature request- an admin dashboard that's password protected:
+![admin dashboard](https://github.com/paige-clark/jungle/blob/master/docs/2.png?raw=true)
+Feature request- add a category and add new products within it:
+![create a new product](https://github.com/paige-clark/jungle/blob/master/docs/3.png?raw=true)
+Feature request- register a new user:
+![register a new user](https://github.com/paige-clark/jungle/blob/master/docs/4.png?raw=true)
+Feature request- show order details after placement:
+![order placement](https://github.com/paige-clark/jungle/blob/master/docs/5.png?raw=true)
 
 ## Setup
 
@@ -40,5 +45,3 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 ## Testing
 - Cypress
 - Rspec
-
-- To run cypress run: bin/rails cypress:open
