@@ -1,6 +1,6 @@
 # Jungle
 
-A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example. The goal of this project was to simulate what it's like to work on code that has been developed by other people in a language that you aren't familiar with. In this case, I started learning Ruby and Ruby on Rails a week before the project began then had to implement assigned tasks.
 
 ## Setup
 
